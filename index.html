@@ -3,276 +3,402 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Certified Professional Coder</title>
-    <style>
-        /* --- Google Fonts --- */
-        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&display=swap');
+    <title>Your Name | Certified Professional Coder</title>
+   
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
-        /* --- Global Styles --- */
+    <style>
+        /*
+        -------------------
+        GLOBAL STYLES
+        -------------------
+        */
+        :root {
+            --primary-color: #2c3e50; /* Navy Blue */
+            --secondary-color: #3498db; /* Bright Blue */
+            --background-color: #f8f9fa; /* Light Gray */
+            --text-color: #333333; /* Dark Gray */
+            --card-bg-color: #ffffff; /* White */
+            --font-main: 'Poppins', sans-serif;
+            --font-secondary: 'Roboto', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Lato', sans-serif;
+            font-family: var(--font-secondary);
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6;
-            color: #333;
-            line-height: 1.6;
+            background-color: var(--background-color);
+            color: var(--text-color);
         }
 
         .container {
-            max-width: 900px;
-            margin: 40px auto;
+            max-width: 1100px;
+            margin: 0 auto;
             padding: 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         h1, h2, h3 {
-            font-family: 'Montserrat', sans-serif;
-            color: #2c3e50;
-            margin-top: 0;
+            font-family: var(--font-main);
+            font-weight: 600;
+            color: var(--primary-color);
         }
 
         a {
-            color: #3498db;
+            color: var(--secondary-color);
             text-decoration: none;
+            transition: color 0.3s;
         }
 
         a:hover {
-            text-decoration: underline;
+            color: #2980b9; /* Darker blue on hover */
         }
 
-        /* --- Header Section --- */
-        .header {
-            text-align: center;
-            padding-bottom: 25px;
-            border-bottom: 2px solid #eeeeee;
+        /*
+        -------------------
+        HEADER & INTRO
+        -------------------
+        */
+        .hero {
+
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
+            flex-direction: column;
+            text-align: center;
+            background: var(--card-bg-color);
+            padding: 50px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
         }
 
         .profile-photo {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            margin-right: 30px;
-            border: 5px solid #3498db;
-        }
-       
-        .header-info h1 {
-            font-size: 2.5em;
-            margin-bottom: 5px;
-        }
-
-        .header-info p {
-            font-size: 1.2em;
-            color: #555;
-            margin: 0;
-        }
-
-        /* --- Section Styles --- */
-        .section {
-            margin-top: 30px;
-            padding-bottom: 20px;
-        }
-
-        .section h2 {
-            font-size: 1.8em;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #3498db;
-            display: inline-block;
+            border: 6px solid var(--secondary-color);
             margin-bottom: 20px;
         }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 2.8em;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            margin: 5px 0 0;
+            font-size: 1.3em;
+            color: #555;
+            font-weight: 400;
+        }
+
+        .hero-certification {
+            background-color: #eaf3fb;
+            color: var(--secondary-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-family: var(--font-main);
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        /*
+        -------------------
+        SECTION STYLING
+        -------------------
+        */
+        .section {
+            background-color: var(--card-bg-color);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            font-size: 2em;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+
+        /*
+        -------------------
+        ABOUT SECTION
+        -------------------
+        */
+        .about-text {
+            font-size: 1.1em;
+            line-height: 1.7;
+        }
        
-        /* --- Experience & Education Timeline --- */
+        /*
+        -------------------
+        GRID LAYOUT FOR EXPERIENCE & EDUCATION
+        -------------------
+        */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+       
         .timeline {
             position: relative;
-            padding-left: 30px;
         }
-
+       
         .timeline-item {
-            position: relative;
+            padding-left: 25px;
+            border-left: 3px solid #e0e0e0;
             margin-bottom: 25px;
-            padding-left: 20px;
-        }
+            position: relative;
 
-        .timeline-item:before {
+        }
+       
+        .timeline-item::before {
             content: '';
             position: absolute;
-            left: 0;
+            left: -9px; /* center the dot on the line */
+
             top: 5px;
             width: 15px;
             height: 15px;
-            background-color: #3498db;
+            background-color: var(--secondary-color);
             border-radius: 50%;
-            border: 2px solid #ffffff;
-            box-shadow: 0 0 0 3px #3498db;
-            z-index: 1;
         }
        
-        .timeline:before {
-            content: '';
-            position: absolute;
-            left: 7px; /* Aligns with the center of the circle */
-            top: 5px;
-            bottom: 5px;
-            width: 3px;
-            background-color: #eeeeee;
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+       
+        .timeline h3 {
+            font-size: 1.25em;
+            margin: 0 0 4px 0;
         }
 
-        .timeline-item h3 {
-            font-size: 1.2em;
+        .timeline p {
             margin: 0;
+            font-size: 1em;
         }
        
-        .timeline-item .period {
-            font-weight: 700;
+        .timeline .institution {
+            font-weight: 500;
             color: #555;
-            display: block;
-            margin: 5px 0 10px;
         }
 
-        .timeline-item p {
-            margin: 0;
+        .timeline .date {
             font-style: italic;
             color: #777;
+            font-size: 0.9em;
         }
-       
-        /* --- Skills Section --- */
-        .skills ul {
+
+        /*
+        -------------------
+        SKILLS & CERTIFICATIONS
+        -------------------
+        */
+        .skills-list {
             list-style: none;
             padding: 0;
+            margin: 0;
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
+        }
+
+        .skill-item {
+            background-color: #ecf0f1;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-family: var(--font-main);
+            transition: background-color 0.3s, color 0.3s;
         }
        
-        .skills li {
-            background-color: #eaf3fb;
-            color: #2c3e50;
-            padding: 10px 15px;
-            border-radius: 20px;
-            font-weight: 500;
+        .skill-item:hover {
+            background-color: var(--primary-color);
+            color: var(--card-bg-color);
+        }
+       
+        .certification-item {
+            margin-bottom: 15px;
+        }
+       
+        .certification-item h3 {
+            margin: 0;
+            font-size: 1.25em;
+        }
+       
+        .certification-item p {
+            margin: 4px 0 0 0;
+            font-style: italic;
+            color: #555;
         }
 
-        /* --- Contact Section --- */
-        .contact p {
+        /*
+        -------------------
+        CONTACT & FOOTER
+        -------------------
+        */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
             font-size: 1.1em;
-            margin-top: 20px;
+        }
+       
+        .contact-info a {
+            font-weight: 600;
         }
 
-        /* --- Footer --- */
         .footer {
             text-align: center;
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #888;
+            padding: 30px 20px;
+            color: #666;
+            margin-top: 20px;
+
         }
+
     </style>
 </head>
 <body>
 
     <div class="container">
 
-        <!-- ======== HEADER ======== -->
-        <header class="header">
-            <!-- Instructions: Replace 'profile.jpg' with the name of your photo file (e.g., 'my-photo.png') -->
+        <!-- ======== HERO / HEADER ======== -->
+        <header class="hero">
+            <!-- IMPORTANT: Replace 'profile.jpg' with the actual name of your photo file (e.g., my-photo.png) -->
+
             <img src="profile.jpg" alt="Your Name" class="profile-photo">
-            <div class="header-info">
-                <h1>[Your Name]</h1>
-                <p>Certified Professional Coder (CPC)</p>
-            </div>
+           
+            <!-- Replace with your name -->
+            <h1>[Your Name]</h1>
+           
+            <p class="hero-subtitle">AAPC Certified Professional Coder specializing in Hierarchical Condition Category (HCC) coding.</p>
+            <div class="hero-certification">CPC Certified</div>
         </header>
 
         <main>
-            <!-- ======== PROFESSIONAL SUMMARY ======== -->
-            <section class="section">
-                <h2>Professional Summary</h2>
-                <p>
-                    A detail-oriented and certified medical coder with a strong foundation in medical terminology, anatomy, and procedural coding. Eager to apply my knowledge of HCC coding and CPC principles to contribute to a challenging healthcare environment. Proven ability to maintain accuracy and compliance while managing complex coding responsibilities.
+
+            <!-- ======== ABOUT ME ======== -->
+            <section id="about" class="section">
+                <h2 class="section-title">About Me</h2>
+                <p class="about-text">
+                    I am a highly motivated and detail-oriented Certified Professional Coder with a robust understanding of medical coding guidelines and healthcare compliance. My recent internship in HCC coding has provided me with hands-on experience in risk adjustment and a passion for ensuring coding accuracy. I am eager to apply my academic background and practical skills to a challenging role within a forward-thinking healthcare organization.
                 </p>
             </section>
+           
+            <!-- Use a grid to organize the next sections neatly -->
+            <div class="grid-container">
 
-            <!-- ======== WORK EXPERIENCE ======== -->
-            <section class="section">
-                <h2>Work Experience</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h3>CORRO Health</h3>
-                        <span class="period">Dates of Internship (e.g., Jan 2023 - Jun 2023)</span>
-                        <p>Designation: HCC Coder (Intern)</p>
-                    </div>
-                </div>
-            </section>
+           
+                <!-- ======== WORK EXPERIENCE ======== -->
+                <section id="experience" class="section">
+                    <h2 class="section-title">Internship</h2>
 
-            <!-- ======== EDUCATION ======== -->
-            <section class="section">
-                <h2>Education</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h3>Centurion University</h3>
-                        <span class="period">Completed: 2023</span>
-                        <p>Bachelor's Degree in [Your Field of Study]</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Vyakabi Higher Secondary School</h3>
-                        <span class="period">Completed: 2018</span>
-                        <p>Higher Secondary (12th Grade)</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Bhagabanchandra Highschool, Odisha</h3>
-                        <span class="period">Completed: 2016</span>
-                        <p>High School (10th Grade)</p>
-                    </div>
-                </div>
-            </section>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h3>HCC Coder (Intern)</h3>
+                            <p class="institution">CORRO Health</p>
+                            <!-- Enter your internship dates here -->
+                            <p class="date">Example: January 2023 - June 2023</p>
 
-            <!-- ======== CERTIFICATIONS ======== -->
-            <section class="section">
-                <h2>Certifications</h2>
-                <div class="timeline">
-                     <div class="timeline-item">
+                        </div>
+                    </div>
+                </section>
+           
+                <!-- ======== CERTIFICATIONS ======== -->
+                <section id="certifications" class="section">
+                    <h2 class="section-title">Certifications</h2>
+                     <div class="certification-item">
+
                         <h3>Certified Professional Coder (CPC)</h3>
-                        <span class="period">AAPC (Year Certified)</span>
+                        <!-- Enter the year you were certified and your Credential ID -->
+                        <p>AAPC | Year: [Your Certification Year]</p>
+
                         <p>Credential ID: [Your CPC Credential ID]</p>
                     </div>
-                </div>
-            </section>
+                </section>
+               
+            </div> <!-- End Grid Container -->
+
+
 
             <!-- ======== SKILLS ======== -->
-            <section class="section skills">
-                <h2>Skills</h2>
-                <ul>
-                    <li>HCC Coding</li>
-                    <li>ICD-10-CM</li>
-                    <li>CPT & HCPCS Level II</li>
-                    <li>Medical Terminology</li>
-                    <li>Anatomy & Physiology</li>
-                    <li>Healthcare Regulations</li>
-                    <li>Attention to Detail</li>
-                    <li>Analytical Skills</li>
+            <section id="skills" class="section">
+                <h2 class="section-title">Professional Skills</h2>
+                <ul class="skills-list">
+                    <li class="skill-item">HCC Coding</li>
+                    <li class="skill-item">Risk Adjustment</li>
+                    <li class="skill-item">ICD-10-CM</li>
+                    <li class="skill-item">CPT & HCPCS Level II</li>
+                    <li class="skill-item">Medical Terminology</li>
+                    <li class="skill-item">Anatomy & Physiology</li>
+                    <li class="skill-item">Healthcare Compliance</li>
+                    <li class="skill-item">Detail-Oriented</li>
+                    <li class="skill-item">Analytical Skills</li>
+                    <li class="skill-item">MS Office Suite</li>
                 </ul>
             </section>
 
-            <!-- ======== CONTACT ======== -->
-            <section class="section contact">
-                <h2>Contact</h2>
-                <p>
-                    Ready to contribute to your team. Let's connect!
-                </p>
-                <p>
-                    <strong>Email:</strong> <a href="mailto:youremail@example.com">youremail@example.com</a><br>
-                    <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a><br>
-                    <strong>Phone:</strong> (Optional) [Your Phone Number]
-                </p>
-            </section>
-        </main>
+            <!-- ======== EDUCATION ======== -->
+            <section id="education" class="section">
+                <h2 class="section-title">Education</h2>
 
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <!-- Enter Your Graduation Degree & Field -->
+                        <h3>Bachelor of Science in [Your Field]</h3>
+                        <p class="institution">Centurion University</p>
+                        <p class="date">Completed: 2023</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Higher Secondary (12th Grade)</h3>
+                        <p class="institution">Vyakabi Higher Secondary School</p>
+                        <p class="date">Completed: 2018</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>High School (10th Grade)</h3>
+                        <p class="institution">Bhagabanchandra High School, Odisha</p>
+                        <p class="date">Completed: 2016</p>
+                    </div>
+                </div>
+            </section>
+           
+            <!-- ======== CONTACT ======== -->
+            <section id="contact" class="section">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="contact-info">
+                    <p>I am currently seeking new opportunities and would love to connect. Please feel free to reach out via email or LinkedIn.</p>
+                    <p><strong>Email:</strong> <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+                </div>
+
+            </section>
+
+        </main>
+       
         <footer class="footer">
-            <p>© 2024 [Your Name]. All Rights Reserved.</p>
+            <!-- Replace with your name -->
+            <p>© 2024 by [Your Name]. Proudly built with HTML & CSS.</p>
         </footer>
 
     </div>
