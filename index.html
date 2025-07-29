@@ -1,52 +1,281 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robot and Text</title>
-
-    <!-- Use a placeholder font (replace with Sanjay Chakrabartty if available) -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-
+    <title>Your Name - Certified Professional Coder</title>
     <style>
+        /* --- Google Fonts --- */
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&display=swap');
+
+        /* --- Global Styles --- */
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #2c3e50;
+            margin-top: 0;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Header Section --- */
+        .header {
+            text-align: center;
+            padding-bottom: 25px;
+            border-bottom: 2px solid #eeeeee;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        
-        .container {
-            display: flex;
-            align-items: center;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap;
         }
 
-        .text {
-            font-family: 'Roboto', sans-serif;
-            font-size: 36px;
-            margin-right: 20px;
-            color: #333;
-        }
-
-        .robot {
+        .profile-photo {
             width: 150px;
-            height: auto;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 30px;
+            border: 5px solid #3498db;
+        }
+       
+        .header-info h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+
+        .header-info p {
+            font-size: 1.2em;
+            color: #555;
+            margin: 0;
+        }
+
+        /* --- Section Styles --- */
+        .section {
+            margin-top: 30px;
+            padding-bottom: 20px;
+        }
+
+        .section h2 {
+            font-size: 1.8em;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+       
+        /* --- Experience & Education Timeline --- */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background-color: #3498db;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 0 3px #3498db;
+            z-index: 1;
+        }
+       
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 7px; /* Aligns with the center of the circle */
+            top: 5px;
+            bottom: 5px;
+            width: 3px;
+            background-color: #eeeeee;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.2em;
+            margin: 0;
+        }
+       
+        .timeline-item .period {
+            font-weight: 700;
+            color: #555;
+            display: block;
+            margin: 5px 0 10px;
+        }
+
+        .timeline-item p {
+            margin: 0;
+            font-style: italic;
+            color: #777;
+        }
+       
+        /* --- Skills Section --- */
+        .skills ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+       
+        .skills li {
+            background-color: #eaf3fb;
+            color: #2c3e50;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        /* --- Contact Section --- */
+        .contact p {
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #888;
         }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <div class="text">Sanjay Chakrabartty</div>
-        <img src="https://via.placeholder.com/150" alt="Robot" class="robot">
+
+        <!-- ======== HEADER ======== -->
+        <header class="header">
+            <!-- Instructions: Replace 'profile.jpg' with the name of your photo file (e.g., 'my-photo.png') -->
+            <img src="profile.jpg" alt="Your Name" class="profile-photo">
+            <div class="header-info">
+                <h1>[Your Name]</h1>
+                <p>Certified Professional Coder (CPC)</p>
+            </div>
+        </header>
+
+        <main>
+            <!-- ======== PROFESSIONAL SUMMARY ======== -->
+            <section class="section">
+                <h2>Professional Summary</h2>
+                <p>
+                    A detail-oriented and certified medical coder with a strong foundation in medical terminology, anatomy, and procedural coding. Eager to apply my knowledge of HCC coding and CPC principles to contribute to a challenging healthcare environment. Proven ability to maintain accuracy and compliance while managing complex coding responsibilities.
+                </p>
+            </section>
+
+            <!-- ======== WORK EXPERIENCE ======== -->
+            <section class="section">
+                <h2>Work Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>CORRO Health</h3>
+                        <span class="period">Dates of Internship (e.g., Jan 2023 - Jun 2023)</span>
+                        <p>Designation: HCC Coder (Intern)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ======== EDUCATION ======== -->
+            <section class="section">
+                <h2>Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Centurion University</h3>
+                        <span class="period">Completed: 2023</span>
+                        <p>Bachelor's Degree in [Your Field of Study]</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Vyakabi Higher Secondary School</h3>
+                        <span class="period">Completed: 2018</span>
+                        <p>Higher Secondary (12th Grade)</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Bhagabanchandra Highschool, Odisha</h3>
+                        <span class="period">Completed: 2016</span>
+                        <p>High School (10th Grade)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ======== CERTIFICATIONS ======== -->
+            <section class="section">
+                <h2>Certifications</h2>
+                <div class="timeline">
+                     <div class="timeline-item">
+                        <h3>Certified Professional Coder (CPC)</h3>
+                        <span class="period">AAPC (Year Certified)</span>
+                        <p>Credential ID: [Your CPC Credential ID]</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ======== SKILLS ======== -->
+            <section class="section skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>HCC Coding</li>
+                    <li>ICD-10-CM</li>
+                    <li>CPT & HCPCS Level II</li>
+                    <li>Medical Terminology</li>
+                    <li>Anatomy & Physiology</li>
+                    <li>Healthcare Regulations</li>
+                    <li>Attention to Detail</li>
+                    <li>Analytical Skills</li>
+                </ul>
+            </section>
+
+            <!-- ======== CONTACT ======== -->
+            <section class="section contact">
+                <h2>Contact</h2>
+                <p>
+                    Ready to contribute to your team. Let's connect!
+                </p>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:youremail@example.com">youremail@example.com</a><br>
+                    <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a><br>
+                    <strong>Phone:</strong> (Optional) [Your Phone Number]
+                </p>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>© 2024 [Your Name]. All Rights Reserved.</p>
+        </footer>
+
     </div>
+
 </body>
 </html>
-
